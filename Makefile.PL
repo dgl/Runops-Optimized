@@ -33,12 +33,17 @@ WriteMakefile(
     OBJECT        => "Optimized.o unroll.o sljit/sljitLir.o",
 );
 
-sub MY::postamble {<<'EOF';
-# MakeMaker doesn't have a correct rule for code in subdirectories
+{
+package MY;
 
-Optimized.c: copy-sljit
+# Fix MakeMaker's rule for .c files in subdirectories
+sub const_cccmd {
+    my $ret = shift->SUPER::const_cccmd(@_);
+    return q{} unless $ret;
 
-copy-sljit: sljit/sljitLir.o
-	cp sljitLir.o sljit
-EOF
+    $ret .= ' -o $@';
+
+    return $ret;
+}
+
 }
