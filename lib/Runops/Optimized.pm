@@ -2,7 +2,7 @@ package Runops::Optimized;
 use 5.014;
 use XSLoader;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 XSLoader::load "Runops::Optimized", $VERSION;
 

@@ -42,3 +42,4 @@
 .*\.so$
 MYMETA.yml
 
+\..*.sw[op]$
