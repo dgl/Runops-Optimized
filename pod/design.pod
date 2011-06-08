@@ -1,6 +1,6 @@
 =head1 NAME
 
-Runops::Optimized design
+Design of Runops::Optimized
 
 =head1 DESCRIPTION
 
